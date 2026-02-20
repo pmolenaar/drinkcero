@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CERO - Energy Water | Coming Soon</title>
+    <meta name="description" content="CERO Energy Water - Water + 80mg Caffeine, Zero Calories, Zero Sugar. Sign up to be notified when we launch.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #f5f5f5;
+            --color-white: #ffffff;
+            --color-black: #1a1a1a;
+            --color-gray: #6b6b6b;
+            --color-light-gray: #e0e0e0;
+            --color-accent: #e85a4f;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            color: var(--color-black);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--color-gray);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .product-image {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 3rem;
+            display: block;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-black);
+        }
+
+        .feature-value.accent {
+            color: var(--color-accent);
+        }
+
+        .feature-label {
+            font-size: 0.75rem;
+            color: var(--color-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        .cta-section {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .cta-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-subtitle {
+            font-size: 0.875rem;
+            color: var(--color-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-direction: column;
+        }
+
+        @media (min-width: 400px) {
+            .form-group {
+                flex-direction: row;
+            }
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-family: var(--font-family);
+            border: 2px solid var(--color-light-gray);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .email-input:focus {
+            border-color: var(--color-black);
+        }
+
+        .email-input::placeholder {
+            color: #999;
+        }
+
+        .submit-btn {
+            padding: 0.875rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: var(--font-family);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            white-space: nowrap;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .submit-btn:disabled {
+            background-color: var(--color-gray);
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .error-message {
+            display: none;
+            padding: 0.5rem;
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            text-align: left;
+            margin-top: 0.5rem;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            color: var(--color-gray);
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .features {
+                gap: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="logo">CERO</h1>
+        <p class="tagline">Energy Water</p>
+
+        <img src="drinkcero.jpeg" alt="CERO Energy Water Can" class="product-image">
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-value">80mg</div>
+                <div class="feature-label">Caffeine</div>
+            </div>
+            <div class="feature">
+                <div class="feature-value accent">Zero</div>
+                <div class="feature-label">Calories</div>
+            </div>
+            <div class="feature">
+                <div class="feature-value">0g</div>
+                <div class="feature-label">Sugar</div>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2 class="cta-title">Coming Soon</h2>
+            <p class="cta-subtitle">Be the first to know when CERO launches.</p>
+
+            <form id="signup-form">
+                <div class="form-group">
+                    <input
+                        type="email"
+                        id="email"
+                        class="email-input"
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+                    <button type="submit" class="submit-btn">Notify Me</button>
+                </div>
+                <p id="error-message" class="error-message"></p>
+            </form>
+
+            <p id="success-message" class="success-message">
+                Thanks! We'll notify you when CERO launches.
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 CERO Energy Water. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        const form = document.getElementById('signup-form');
+        const emailInput = document.getElementById('email');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.classList.add('show');
+                return;
+            }
+
+            errorMessage.classList.remove('show');
+
+            // Store email in localStorage (for demo purposes)
+            // In production, you'd send this to a backend/email service
+            const emails = JSON.parse(localStorage.getItem('cero_emails') || '[]');
+
+            if (emails.includes(email)) {
+                errorMessage.textContent = 'This email is already registered.';
+                errorMessage.classList.add('show');
+                return;
+            }
+
+            emails.push(email);
+            localStorage.setItem('cero_emails', JSON.stringify(emails));
+
+            // Show success state
+            form.style.display = 'none';
+            successMessage.classList.add('show');
+
+            console.log('Email collected:', email);
+            console.log('All emails:', emails);
+        });
+
+        // Clear error on input
+        emailInput.addEventListener('input', () => {
+            errorMessage.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
